@@ -7,20 +7,28 @@ namespace Singleton
     {
         static void Main(string[] args)
         {
-            Parallel.Invoke(FirstInvoke, SecondInvoke);
-            //Console.WriteLine(new Singleton().RandomNum);
-            //Console.WriteLine(new Singleton().RandomNum);
+            Parallel.Invoke(LazyFirstInvoke, LazySecondInvoke, EagerFirstInvoke, EagerSecondInvoke);
             Console.ReadLine();
         }
 
-        private static void SecondInvoke()
+        private static void LazySecondInvoke()
         {
-            Console.WriteLine(Singleton.GetInstance().RandomNum);
+            Console.WriteLine(LazySingleton.GetInstance().RandomNum);
         }
 
-        private static void FirstInvoke()
+        private static void LazyFirstInvoke()
         {
-            Console.WriteLine(Singleton.GetInstance().RandomNum);
+            Console.WriteLine(LazySingleton.GetInstance().RandomNum);
+        }
+
+        private static void EagerSecondInvoke()
+        {
+            Console.WriteLine(EagerSingleton.GetInstance().RandomNum);
+        }
+
+        private static void EagerFirstInvoke()
+        {
+            Console.WriteLine(EagerSingleton.GetInstance().RandomNum);
         }
     }
 }

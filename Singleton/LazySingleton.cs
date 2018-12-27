@@ -5,12 +5,12 @@ using System.Threading;
 
 namespace Singleton
 {
-    public sealed class Singleton
+    public sealed class LazySingleton
     {
         public int RandomNum { get; set; }
-        public static Singleton instance;
+        private static LazySingleton instance;
         static readonly object _object = new object();
-        private Singleton()
+        private LazySingleton()
         {
             RandomNum = new Random().Next(999999999);
         }
@@ -20,14 +20,14 @@ namespace Singleton
         //    RandomNum = new Random().Next(999999999);
         //}
 
-        public static Singleton GetInstance()
+        public static LazySingleton GetInstance()
         {
             Monitor.Enter(_object);
             try
             {
                 if (instance == null)
                 {
-                    instance = new Singleton();
+                    instance = new LazySingleton();
                 }
             }
             finally
