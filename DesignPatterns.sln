@@ -3,9 +3,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Creational", "Creational", "{2E985CEF-167F-4FBE-B33B-B93AC5D6FD05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Singleton", "Singleton\Singleton.csproj", "{C4214CF3-8AE6-47A8-95A2-025595D0B3A5}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C4214CF3-8AE6-47A8-95A2-025595D0B3A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4214CF3-8AE6-47A8-95A2-025595D0B3A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4214CF3-8AE6-47A8-95A2-025595D0B3A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4214CF3-8AE6-47A8-95A2-025595D0B3A5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C4214CF3-8AE6-47A8-95A2-025595D0B3A5} = {2E985CEF-167F-4FBE-B33B-B93AC5D6FD05}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {309645ED-40AC-44CB-84DA-3C51081540D8}
