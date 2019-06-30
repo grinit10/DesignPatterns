@@ -4,13 +4,13 @@ namespace Prototype
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Person firstperson = new Person(new[] { "Arnab", "Jon", "Smith" }, new Address("Ayyappa Society Main Road", 256334));
-            Person secondperson = Extensions.DeepCopyUsingXmlSerializer(firstperson);
-            secondperson.Names = new[] { "Arpita", "Jon", "Smith" };
-            Console.WriteLine(firstperson);
-            Console.WriteLine(secondperson);
+            var firstPerson = new Person(new[] { "Arnab", "Jon", "Smith" }, new Address("Ayyappa Society Main Road", 256334));
+            var secondPerson = Extensions.DeepCopyUsingXmlSerializer(firstPerson);
+            secondPerson.Names = new[] { "Arpita", "Jon", "Smith" };
+            Console.WriteLine(firstPerson);
+            Console.WriteLine(secondPerson);
             Console.ReadLine();
         }
     }

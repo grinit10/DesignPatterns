@@ -4,9 +4,9 @@ using System.Text;
 
 namespace AbstractFactory
 {
-    class HondaFactory : VehicleFactory
+    class HondaFactory : IVehicleFactory
     {
-        public Bike GetBike(string Bike)
+        public IBike GetBike(string Bike)
         {
             switch (Bike)
             {
@@ -20,7 +20,7 @@ namespace AbstractFactory
 
         }
 
-        public Scooter GetScooter(string Scooter)
+        public IScooter GetScooter(string Scooter)
         {
             switch (Scooter)
             {

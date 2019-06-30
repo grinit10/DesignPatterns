@@ -1,34 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace AbstractFactory
 {
-    class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
-            VehicleFactory honda = new HondaFactory();
-            VehicleClient hondaclient = new VehicleClient(honda, "Regular");
+            IVehicleFactory honda = new HondaFactory();
+            var hondaClient = new VehicleClient(honda, "Regular");
 
             Console.WriteLine("******* Honda **********");
-            Console.WriteLine(hondaclient.GetBikeName());
-            Console.WriteLine(hondaclient.GetScooterName());
+            Console.WriteLine(hondaClient.GetBikeName());
+            Console.WriteLine(hondaClient.GetScooterName());
 
-            hondaclient = new VehicleClient(honda, "Sports");
-            Console.WriteLine(hondaclient.GetBikeName());
-            Console.WriteLine(hondaclient.GetScooterName());
+            hondaClient = new VehicleClient(honda, "Sports");
+            Console.WriteLine(hondaClient.GetBikeName());
+            Console.WriteLine(hondaClient.GetScooterName());
 
-            VehicleFactory hero = new HeroFactory();
-            VehicleClient heroclient = new VehicleClient(hero, "Regular");
+            IVehicleFactory hero = new HeroFactory();
+            var heroClientlient = new VehicleClient(hero, "Regular");
 
             Console.WriteLine("******* Hero **********");
-            Console.WriteLine(heroclient.GetBikeName());
-            Console.WriteLine(heroclient.GetScooterName());
+            Console.WriteLine(heroClientlient.GetBikeName());
+            Console.WriteLine(heroClientlient.GetScooterName());
 
-            heroclient = new VehicleClient(hero, "Sports");
-            Console.WriteLine(heroclient.GetBikeName());
-            Console.WriteLine(heroclient.GetScooterName());
+            heroClientlient = new VehicleClient(hero, "Sports");
+            Console.WriteLine(heroClientlient.GetBikeName());
+            Console.WriteLine(heroClientlient.GetScooterName());
 
             Console.ReadKey();
         }

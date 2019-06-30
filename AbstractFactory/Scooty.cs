@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AbstractFactory
 {
-    class Scooty : Scooter
+    class Scooty : IScooter
     {
         public string Name()
         {

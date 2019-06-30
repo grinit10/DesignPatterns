@@ -1,28 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AbstractFactory
+﻿namespace AbstractFactory
 {
-    class VehicleClient
+    internal class VehicleClient
     {
-        Bike bike;
-        Scooter scooter;
+        private readonly IBike _bike;
+        private readonly IScooter _scooter;
 
-        public VehicleClient(VehicleFactory factory, string type)
+        public VehicleClient(IVehicleFactory factory, string type)
         {
-            bike = factory.GetBike(type);
-            scooter = factory.GetScooter(type);
+            _bike = factory.GetBike(type);
+            _scooter = factory.GetScooter(type);
         }
 
         public string GetBikeName()
         {
-            return bike.Name();
+            return _bike.Name();
         }
 
         public string GetScooterName()
         {
-            return scooter.Name();
+            return _scooter.Name();
         }
     }
 }
